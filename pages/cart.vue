@@ -73,10 +73,21 @@
                             <p class="ma-0">Order Total</p>
                             <p class="text-primary">${{ cartStore.total }}</p>
                         </div>
-                        <v-btn color="primary" block> Checkout </v-btn>
+                        <v-btn color="primary" block @click="handleCheckOut"> Checkout </v-btn>
                     </v-card-text>
                 </v-card>
             </v-col>
+            <v-dialog width="500" v-model="isActive">
+                <v-card title="Confirmation">
+                    <v-card-text>
+                        ThankYou! Your order has been placed successfully, wait for the order to be processed.
+                    </v-card-text>
+                    <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn text="Close" @click="handleCheckOut"></v-btn>
+                    </v-card-actions>
+                </v-card>
+            </v-dialog>
         </v-row>
     </div>
 </template>
@@ -84,8 +95,19 @@
 <script setup>
 import { useCartStore } from '../store/cart.js';
 
+const isActive = ref(false)
 useHead({ title: 'Cart' })
 const cartStore = useCartStore();
+
+const handleCheckOut = () => {
+    if (isActive.value) {
+        isActive.value = false
+        cartStore.clearCart()
+    }
+    else {
+        isActive.value = true
+    }
+}
 </script>
 
 <style lang="scss" scoped></style>

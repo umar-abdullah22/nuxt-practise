@@ -18,7 +18,7 @@
     </v-app-bar>
 </template>
 <script setup>
-import { useCartStore } from '@store/cart'
+import { useCartStore } from '../store/cart'
 
 const cartStore = useCartStore()
 </script>

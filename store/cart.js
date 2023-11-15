@@ -10,7 +10,6 @@ export const useCartStore = defineStore('cart', {
     getCartItems() {
       return Object.keys(this.cartItems).map((item) => {
         const product = this.cartItems[item];
-        console.log(product);
         const mainProduct = products.find((p) => p.id === product.productId);
         return {
           id: product.productId,
@@ -66,6 +65,9 @@ export const useCartStore = defineStore('cart', {
     },
     toggleTheme() {
       this.theme = this.theme === 'light' ? 'dark' : 'light';
+    },
+    clearCart() {
+      this.cartItems = {};
     },
   },
 });
