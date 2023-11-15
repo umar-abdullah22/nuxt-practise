@@ -54,11 +54,11 @@
                         </v-card-title>
 
                         <v-card-subtitle> ${{ product.price }} </v-card-subtitle>
-                        <v-card-text>
-                            Features:
-                        </v-card-text>
-                        <v-card-subtitle v-for="(feature, i) in product.features" :key="i">
-                            {{ feature }}</v-card-subtitle>
+
+                        <v-list lines="1"><v-card-text>
+                                Features:
+                            </v-card-text> <v-list-item v-for="(feature, i) in product.features" :key="i">
+                                {{ feature }}</v-list-item></v-list>
                         <v-card-actions>
                             <v-btn color="primary"> Read More </v-btn>
                             <v-btn class="ml-2 bg-error" @click="cartStore.addToCart(product.id)">
