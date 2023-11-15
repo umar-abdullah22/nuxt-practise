@@ -75,6 +75,8 @@
 <script setup>
 import data from "../data.json";
 import { useCartStore } from "../store/cart";
+
+useHead({ title: 'Shopping Website' })
 const products = ref(data.products.phones);
 const grid = ref(true);
 const cartStore = useCartStore()

@@ -83,6 +83,8 @@
 
 <script setup>
 import { useCartStore } from '../store/cart.js';
+
+useHead({ title: 'Cart' })
 const cartStore = useCartStore();
 </script>
 
