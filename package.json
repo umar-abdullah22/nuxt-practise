@@ -12,7 +12,16 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "nuxt": "^3.8.1",
+    "vite-plugin-vuetify": "^1.0.2",
     "vue": "^3.3.8",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "vuetify": "^3.4.1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.2",
+    "@mdi/font": "^7.3.67",
+    "@pinia/nuxt": "^0.5.1",
+    "pinia": "^2.1.7",
+    "sass": "^1.69.5"
   }
 }
